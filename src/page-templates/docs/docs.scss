@@ -1,8 +1,8 @@
 
 @tailwind utilities;
 
-/* veya modern (sadece referans) yöntem */
-@reference "@/styles/globals.scss";
+/* Referans edilen Tailwind utility sınıfları ve temalar */
+@reference "../../../app/globals.css";
 
 .docs-page {
   @apply text-text-light dark:text-text-dark leading-relaxed;

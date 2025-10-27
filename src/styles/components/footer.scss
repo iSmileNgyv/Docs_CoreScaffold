@@ -1,3 +1,7 @@
+@tailwind utilities;
+
+@reference "../../../app/globals.css";
+
 .footer-wrapper {
   @apply w-full border-t border-border-light dark:border-border-dark
   bg-surface-light dark:bg-surface-dark text-center text-sm
