@@ -1,3 +1,7 @@
+@tailwind utilities;
+
+@reference "../../../app/globals.css";
+
 .header-wrapper {
   @apply sticky top-0 z-20 flex items-center justify-between border-b border-solid
   border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark

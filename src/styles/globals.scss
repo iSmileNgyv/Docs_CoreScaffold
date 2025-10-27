@@ -1,0 +1,43 @@
+:root {
+  --color-background-light: #f1f5f9;
+  --color-background-dark: #020817;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #0f172a;
+  --color-text-light: #0f172a;
+  --color-text-dark: #e2e8f0;
+  --color-text-muted-light: #64748b;
+  --color-text-muted-dark: #94a3b8;
+  --color-border-light: #e2e8f0;
+  --color-border-dark: #1f2937;
+  --color-primary: #6366f1;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif);
+  background-color: var(--color-background-light);
+  color: var(--color-text-light);
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.dark body,
+body.dark {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-dark);
+}
