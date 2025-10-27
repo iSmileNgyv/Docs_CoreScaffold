@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import { Material_Symbols_Outlined } from "next/font/google";
 import "@/styles/globals.scss";
+
+const materialSymbols = Material_Symbols_Outlined({
+    display: "block",
+    subsets: ["latin"],
+    variable: "--font-material-symbols",
+    weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
     title: "Docs Core Scaffold",
@@ -14,11 +22,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-            {children}
-        </ThemeProvider>
-        </body>
+            <body className={`${materialSymbols.variable} antialiased`}>
+                <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+                    {children}
+                </ThemeProvider>
+            </body>
         </html>
     );
 }
