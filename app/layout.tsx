@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
     title: "Docs Core Scaffold",
