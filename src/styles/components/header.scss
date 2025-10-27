@@ -1,0 +1,46 @@
+.header-wrapper {
+  @apply sticky top-0 z-20 flex items-center justify-between border-b border-solid
+  border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark
+  px-6 py-3 whitespace-nowrap transition-colors duration-200;
+}
+
+.logo-area {
+  @apply flex items-center gap-4 text-text-light dark:text-text-dark;
+}
+
+.logo-icon {
+  @apply text-primary w-7 h-7 flex items-center justify-center;
+}
+
+.logo-text {
+  @apply text-lg font-bold leading-tight tracking-[-0.015em];
+}
+
+.search-bar {
+  @apply flex items-center bg-background-light dark:bg-background-dark
+  rounded-lg pl-3 pr-2 min-w-[10rem] max-w-[16rem] h-10 ml-8;
+  .search-input {
+    @apply flex-1 bg-transparent border-none focus:outline-none px-2 text-base
+    text-text-light dark:text-text-dark placeholder:text-text-muted-light
+    dark:placeholder:text-text-muted-dark;
+  }
+}
+
+.header-left {
+  @apply flex items-center gap-8;
+}
+
+.header-right {
+  @apply flex items-center justify-end gap-2 md:gap-4;
+}
+
+.icon-btn {
+  @apply flex items-center justify-center h-10 w-10 rounded-lg cursor-pointer
+  text-text-muted-light dark:text-text-muted-dark hover:bg-background-light
+  dark:hover:bg-background-dark hover:text-text-light dark:hover:text-text-dark
+  transition-colors duration-150;
+}
+
+.user-avatar {
+  @apply bg-center bg-no-repeat bg-cover rounded-full size-10 border border-border-light dark:border-border-dark;
+}

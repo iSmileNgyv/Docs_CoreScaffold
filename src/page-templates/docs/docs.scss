@@ -1,0 +1,22 @@
+
+@tailwind utilities;
+
+/* veya modern (sadece referans) yöntem */
+@reference "@/styles/globals.scss";
+
+.docs-page {
+  @apply text-text-light dark:text-text-dark leading-relaxed;
+
+  .docs-title {
+    @apply text-4xl font-extrabold tracking-tight;
+  }
+
+  .docs-section {
+    @apply border-l-4 border-primary/30 pl-4;
+  }
+
+  .code-block {
+    @apply bg-background-light dark:bg-background-dark
+    text-sm rounded-lg p-4 font-mono;
+  }
+}

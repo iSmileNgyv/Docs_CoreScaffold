@@ -1,0 +1,5 @@
+.footer-wrapper {
+  @apply w-full border-t border-border-light dark:border-border-dark
+  bg-surface-light dark:bg-surface-dark text-center text-sm
+  text-text-muted-light dark:text-text-muted-dark py-4 mt-auto;
+}

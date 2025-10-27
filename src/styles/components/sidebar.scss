@@ -1,0 +1,58 @@
+.sidebar-wrapper {
+  @apply sticky top-[69px] h-[calc(100vh-69px)] border-r border-solid
+  border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark
+  p-4 flex flex-col justify-between transition-all duration-300;
+  width: 18rem;
+
+  &.collapsed {
+    @apply w-[5rem];
+    .workspace-meta,
+    .nav-item p,
+    .collapse-btn p {
+      @apply hidden;
+    }
+  }
+}
+
+.workspace-info {
+  @apply flex items-center gap-3 mb-6;
+}
+
+.workspace-avatar {
+  @apply bg-center bg-cover rounded-full size-10 flex-shrink-0;
+}
+
+.workspace-meta {
+  h1 {
+    @apply text-text-light dark:text-text-dark text-base font-medium;
+  }
+  p {
+    @apply text-text-muted-light dark:text-text-muted-dark text-sm;
+  }
+}
+
+.nav-section {
+  @apply flex flex-col gap-1 flex-1;
+}
+
+.nav-item {
+  @apply flex items-center gap-3 px-3 py-2 rounded-lg
+  hover:bg-background-light dark:hover:bg-background-dark
+  transition-colors text-text-light dark:text-text-dark;
+  .material-symbols-outlined {
+    @apply text-text-muted-light dark:text-text-muted-dark text-2xl;
+  }
+
+  &.active {
+    @apply bg-primary/20 text-primary font-semibold;
+    .material-symbols-outlined {
+      @apply text-primary;
+    }
+  }
+}
+
+.collapse-btn {
+  @apply flex items-center gap-3 px-3 py-2 rounded-lg
+  hover:bg-background-light dark:hover:bg-background-dark
+  transition-colors text-text-muted-light dark:text-text-muted-dark w-full;
+}
