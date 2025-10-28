@@ -3,7 +3,9 @@
 @reference "../../../app/globals.css";
 
 .footer-wrapper {
-  @apply w-full border-t border-border-light dark:border-border-dark
-  bg-surface-light dark:bg-surface-dark text-center text-sm
-  text-text-muted-light dark:text-text-muted-dark py-4 mt-auto;
+  @apply w-full border-t text-center text-sm py-4 mt-auto;
+  border-color: var(--border);
+  background-color: var(--surface);
+  color: var(--text-muted);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }

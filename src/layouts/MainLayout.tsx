@@ -4,12 +4,14 @@ import Footer from "@/layouts/Footer";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="min-h-screen flex flex-col bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors">
+        <div className="app-shell min-h-screen flex flex-col">
             <Header />
-            <div className="flex flex-1">
+            <div className="shell-body flex flex-1">
                 <Sidebar />
-                <main className="flex-1 flex flex-col">
-                    <div className="flex-1 p-6 overflow-y-auto">{children}</div>
+                <main className="shell-content flex-1 flex flex-col">
+                    <div className="content-scroll flex-1 overflow-y-auto">
+                        <div className="content-panel">{children}</div>
+                    </div>
                     <Footer />
                 </main>
             </div>

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
+import Providers from "./providers";
+import "./globals.css";
 import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
@@ -22,9 +23,7 @@ export default function RootLayout({
                 />
             </head>
             <body className="antialiased">
-                <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-                    {children}
-                </ThemeProvider>
+                <Providers>{children}</Providers>
             </body>
         </html>
     );

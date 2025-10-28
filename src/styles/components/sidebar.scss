@@ -3,18 +3,20 @@
 @reference "../../../app/globals.css";
 
 .sidebar-wrapper {
-  @apply sticky top-[69px] h-[calc(100vh-69px)] border-r border-solid
-  border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark
-  p-4 flex flex-col justify-between transition-all duration-300;
+  @apply sticky top-[69px] h-[calc(100vh-69px)] p-4 flex flex-col justify-between transition-all duration-300;
   width: 18rem;
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+  color: var(--text-primary);
+}
 
-  &.collapsed {
-    @apply w-[5rem];
-    .workspace-meta,
-    .nav-item p,
-    .collapse-btn p {
-      @apply hidden;
-    }
+.sidebar-wrapper.collapsed {
+  @apply w-[5rem];
+
+  .workspace-meta,
+  .nav-item p,
+  .collapse-btn p {
+    @apply hidden;
   }
 }
 
@@ -24,15 +26,17 @@
 
 .workspace-avatar {
   @apply bg-center bg-cover rounded-full size-10 flex-shrink-0;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--border) 65%, transparent);
 }
 
-.workspace-meta {
-  h1 {
-    @apply text-text-light dark:text-text-dark text-base font-medium;
-  }
-  p {
-    @apply text-text-muted-light dark:text-text-muted-dark text-sm;
-  }
+.workspace-meta h1 {
+  @apply text-base font-medium;
+  color: var(--text-primary);
+}
+
+.workspace-meta p {
+  @apply text-sm;
+  color: var(--text-muted);
 }
 
 .nav-section {
@@ -40,31 +44,52 @@
 }
 
 .nav-item {
-  @apply flex items-center gap-3 px-3 py-2 rounded-lg
-  hover:bg-background-light dark:hover:bg-background-dark
-  transition-colors text-text-light dark:text-text-dark;
+  @apply flex items-center gap-3 px-3 py-2 rounded-lg transition-colors;
+  color: var(--text-primary);
+
   .material-symbols-outlined {
-    @apply text-text-muted-light dark:text-text-muted-dark text-2xl;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: color-mix(in srgb, var(--surface-muted) 65%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 
   &.active {
-    @apply bg-primary/20 text-primary font-semibold;
+    background: var(--accent-soft);
+    color: var(--accent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent);
+
     .material-symbols-outlined {
-      @apply text-primary;
+      color: var(--accent);
     }
   }
 }
 
 .collapse-btn {
-  @apply inline-flex items-center gap-3 rounded-lg px-3 py-2 w-full bg-transparent
-  text-text-muted-light dark:text-text-muted-dark transition-colors duration-150;
+  @apply inline-flex items-center gap-3 rounded-lg px-3 py-2 w-full bg-transparent transition-colors duration-150;
+  color: var(--text-muted);
+  border: none;
 
-  &:hover {
-    @apply bg-background-light dark:bg-background-dark;
+  &:hover,
+  &:focus-visible {
+    background-color: color-mix(in srgb, var(--surface-muted) 65%, transparent);
+    color: var(--text-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 
   .material-symbols-outlined {
     @apply text-2xl;
   }
-  border: none;
 }
