@@ -57,21 +57,37 @@
 }
 
 .docs-btn {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight
   transition-all duration-200;
+  letter-spacing: 0.01em;
+
+  span {
+    @apply flex items-center;
+  }
+
+  .material-symbols-outlined {
+    @apply text-base;
+  }
 
   &--primary {
-    @apply bg-primary text-white hover:-translate-y-0.5;
-    box-shadow: 0 12px 30px -18px rgba(17, 115, 212, 0.75);
+    @apply bg-gradient-to-r from-primary to-primary/80 text-white shadow-[0_12px_30px_-18px_rgba(17,115,212,0.75)] hover:-translate-y-0.5;
+
+    .material-symbols-outlined {
+      @apply text-white/90;
+    }
 
     &:hover {
-      box-shadow: 0 20px 45px -24px rgba(17, 115, 212, 0.8);
+      box-shadow: 0 20px 45px -20px rgba(17, 115, 212, 0.85);
     }
   }
 
   &--ghost {
-    @apply border border-border-light dark:border-border-dark bg-white/80 text-text-light
-    dark:text-text-dark hover:border-primary/40 hover:text-primary;
+    @apply border border-border-light dark:border-border-dark bg-white/90 text-text-light
+    dark:bg-background-dark/80 dark:text-text-dark hover:border-primary/50 hover:text-primary;
+
+    .material-symbols-outlined {
+      @apply text-primary/80;
+    }
   }
 }
 

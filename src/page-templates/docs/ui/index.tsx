@@ -63,10 +63,16 @@ export default function DocsTemplate() {
                     </p>
                     <div className="docs-actions">
                         <a className="docs-btn docs-btn--primary" href="#quickstart">
-                            View quickstart
+                            <span className="material-symbols-outlined" aria-hidden="true">
+                                rocket_launch
+                            </span>
+                            <span>View quickstart</span>
                         </a>
                         <a className="docs-btn docs-btn--ghost" href="#project-structure">
-                            Browse project files
+                            <span className="material-symbols-outlined" aria-hidden="true">
+                                folder_open
+                            </span>
+                            <span>Browse project files</span>
                         </a>
                     </div>
                 </div>
