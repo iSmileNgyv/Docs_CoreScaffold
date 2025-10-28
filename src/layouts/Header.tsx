@@ -9,6 +9,7 @@ export default function Header() {
     const [mounted, setMounted] = useState(false);
 
     const currentTheme = resolvedTheme ?? "light";
+    const isDark = currentTheme === "dark";
 
     // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => setMounted(true), []);
@@ -60,13 +61,15 @@ export default function Header() {
 
                 {/* dark mode toggle */}
                 <button
-                    onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
+                    onClick={() => setTheme(isDark ? "light" : "dark")}
                     className="icon-btn"
                     type="button"
-                    aria-label={`Switch to ${currentTheme === "light" ? "dark" : "light"} mode`}
+                    aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+                    aria-pressed={isDark}
+                    title={`Activate ${isDark ? "light" : "dark"} mode`}
                 >
           <span className="material-symbols-outlined text-2xl">
-            {currentTheme === "light" ? "dark_mode" : "light_mode"}
+            {isDark ? "light_mode" : "dark_mode"}
           </span>
                 </button>
 

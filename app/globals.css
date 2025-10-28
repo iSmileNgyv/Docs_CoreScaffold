@@ -1,41 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f6fb;
+  color-scheme: light;
+  --background: #f5f7fb;
+  --surface: #ffffff;
+  --surface-muted: #eef1f8;
+  --surface-raised: #f8faff;
+  --border: #d8e0ed;
+  --border-strong: #c4ccdb;
   --foreground: #0f172a;
+  --text-primary: #0f172a;
+  --text-muted: #5b6c82;
+  --text-subtle: #7c8aa4;
+  --accent: #4c8dff;
+  --accent-strong: #2563eb;
+  --accent-soft: rgba(76, 141, 255, 0.16);
+  --ring: rgba(76, 141, 255, 0.35);
+  --shadow-soft: 0 18px 55px -34px rgba(15, 23, 42, 0.25);
 }
 
 :root.dark {
-  --background: #0b1220;
+  color-scheme: dark;
+  --background: #070d1a;
+  --surface: #111a2b;
+  --surface-muted: #17233a;
+  --surface-raised: #1d2c47;
+  --border: #1f2a3d;
+  --border-strong: #2a3853;
   --foreground: #e2e8f7;
-  --color-primary: #60a5fa;
+  --text-primary: #e2e8f7;
+  --text-muted: #97a7c5;
+  --text-subtle: #8293b5;
+  --accent: #60a5fa;
+  --accent-strong: #82c2ff;
+  --accent-soft: rgba(96, 165, 250, 0.22);
+  --ring: rgba(96, 165, 250, 0.4);
+  --shadow-soft: 0 22px 55px -34px rgba(3, 10, 22, 0.65);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-background-light: #f4f6fb;
-  --color-background-dark: #0b1220;
-  --color-surface-light: #ffffff;
-  --color-surface-dark: #111a2b;
-  --color-text-light: #0f172a;
-  --color-text-dark: #e2e8f7;
-  --color-text-muted-light: #5b6c82;
-  --color-text-muted-dark: #97a7c5;
-  --color-border-light: #d8e0ed;
-  --color-border-dark: #1f2a3d;
-  --color-primary: #3b82f6;
+  --color-background-light: var(--surface);
+  --color-background-dark: var(--surface-muted);
+  --color-surface-light: var(--surface);
+  --color-surface-dark: var(--surface-muted);
+  --color-text-light: var(--text-primary);
+  --color-text-dark: var(--text-primary);
+  --color-text-muted-light: var(--text-muted);
+  --color-text-muted-dark: var(--text-muted);
+  --color-border-light: var(--border);
+  --color-border-dark: var(--border);
+  --color-primary: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.dark body {
-  background: var(--background);
-  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

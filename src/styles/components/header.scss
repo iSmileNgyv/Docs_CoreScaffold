@@ -3,17 +3,21 @@
 @reference "../../../app/globals.css";
 
 .header-wrapper {
-  @apply sticky top-0 z-20 flex items-center justify-between border-b border-solid
-  border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark
-  px-6 py-3 whitespace-nowrap transition-colors duration-200;
+  @apply sticky top-0 z-20 flex items-center justify-between border-b border-solid px-6 py-3 whitespace-nowrap;
+  background-color: var(--surface);
+  border-color: var(--border);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .logo-area {
-  @apply flex items-center gap-4 text-text-light dark:text-text-dark;
+  @apply flex items-center gap-4;
+  color: var(--text-primary);
 }
 
 .logo-icon {
-  @apply text-primary w-7 h-7 flex items-center justify-center;
+  @apply w-7 h-7 flex items-center justify-center;
+  color: var(--accent);
 }
 
 .logo-text {
@@ -21,12 +25,18 @@
 }
 
 .search-bar {
-  @apply flex items-center bg-background-light dark:bg-background-dark
-  rounded-lg pl-3 pr-2 min-w-[10rem] max-w-[16rem] h-10 ml-8;
+  @apply flex items-center rounded-lg pl-3 pr-2 min-w-[10rem] max-w-[16rem] h-10 ml-8;
+  background-color: color-mix(in srgb, var(--surface-muted) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
   .search-input {
-    @apply flex-1 bg-transparent border-none focus:outline-none px-2 text-base
-    text-text-light dark:text-text-dark placeholder:text-text-muted-light
-    dark:placeholder:text-text-muted-dark;
+    @apply flex-1 bg-transparent border-none focus:outline-none px-2 text-base;
+    color: var(--text-primary);
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
   }
 }
 
@@ -39,19 +49,29 @@
 }
 
 .icon-btn {
-  @apply inline-flex items-center justify-center rounded-lg px-2.5 py-2 cursor-pointer
-  bg-transparent text-text-muted-light dark:text-text-muted-dark transition-colors duration-150;
+  @apply inline-flex items-center justify-center rounded-lg px-2.5 py-2 cursor-pointer;
+  background-color: transparent;
+  color: var(--text-muted);
+  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
-  &:hover {
-    @apply bg-background-light dark:bg-background-dark;
+  &:hover,
+  &:focus-visible {
+    background-color: color-mix(in srgb, var(--surface-muted) 70%, transparent);
+    color: var(--text-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 
   .material-symbols-outlined {
     @apply text-2xl;
   }
-  border: none;
 }
 
 .user-avatar {
-  @apply bg-center bg-no-repeat bg-cover rounded-full size-10 border border-border-light dark:border-border-dark;
+  @apply bg-center bg-no-repeat bg-cover rounded-full size-10;
+  border: 1px solid var(--border);
 }
