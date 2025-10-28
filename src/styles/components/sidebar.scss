@@ -56,7 +56,15 @@
 }
 
 .collapse-btn {
-  @apply flex items-center gap-3 px-3 py-2 rounded-lg
-  hover:bg-background-light dark:hover:bg-background-dark
-  transition-colors text-text-muted-light dark:text-text-muted-dark w-full;
+  @apply inline-flex items-center gap-3 rounded-lg px-3 py-2 w-full bg-transparent
+  text-text-muted-light dark:text-text-muted-dark transition-colors duration-150;
+
+  &:hover {
+    @apply bg-background-light dark:bg-background-dark;
+  }
+
+  .material-symbols-outlined {
+    @apply text-2xl;
+  }
+  border: none;
 }

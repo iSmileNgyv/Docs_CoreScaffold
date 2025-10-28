@@ -63,10 +63,16 @@ export default function DocsTemplate() {
                     </p>
                     <div className="docs-actions">
                         <a className="docs-btn docs-btn--primary" href="#quickstart">
-                            View quickstart
+                            <span className="material-symbols-outlined" aria-hidden="true">
+                                rocket_launch
+                            </span>
+                            <span>View quickstart</span>
                         </a>
                         <a className="docs-btn docs-btn--ghost" href="#project-structure">
-                            Browse project files
+                            <span className="material-symbols-outlined" aria-hidden="true">
+                                folder_open
+                            </span>
+                            <span>Browse project files</span>
                         </a>
                     </div>
                 </div>
@@ -77,19 +83,6 @@ export default function DocsTemplate() {
             </section>
 
             <div className="docs-grid">
-                <aside className="docs-toc">
-                    <p className="docs-toc__title">On this page</p>
-                    <nav>
-                        <ul>
-                            {anchors.map((anchor) => (
-                                <li key={anchor.id}>
-                                    <a href={`#${anchor.id}`}>{anchor.label}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                </aside>
-
                 <article className="docs-content">
                     <section className="docs-card" id="quickstart">
                         <header>
@@ -208,7 +201,23 @@ export default function DocsTemplate() {
                     </section>
                 </article>
 
-                <aside className="docs-sidebar">
+                <aside className="docs-right-rail">
+                    <div className="docs-toc">
+                        <p className="docs-toc__title">On this page</p>
+                        <nav>
+                            <ul>
+                                {anchors.map((anchor, index) => (
+                                    <li key={anchor.id}>
+                                        <a href={`#${anchor.id}`} data-active={index === 0}>
+                                            <span aria-hidden="true" />
+                                            {anchor.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </div>
+
                     <div className="docs-card docs-card--compact">
                         <header>
                             <p className="docs-card__eyebrow">Need more?</p>
@@ -219,9 +228,11 @@ export default function DocsTemplate() {
                             {resources.map((resource) => (
                                 <li key={resource.label}>
                                     <a href={resource.href}>
-                                        <h3>{resource.label}</h3>
-                                        <p>{resource.description}</p>
-                                        <span className="material-symbols-outlined">open_in_new</span>
+                                        <div>
+                                            <h3>{resource.label}</h3>
+                                            <p>{resource.description}</p>
+                                        </div>
+                                        <span className="material-symbols-outlined">north_east</span>
                                     </a>
                                 </li>
                             ))}
