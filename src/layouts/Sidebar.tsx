@@ -61,7 +61,7 @@ export default function Sidebar() {
         <span className="material-symbols-outlined">
           {collapsed ? "keyboard_double_arrow_right" : "keyboard_double_arrow_left"}
         </span>
-                {!collapsed && <p>Collapse sidebar</p>}
+                {!collapsed ? 'Collapse sidebar' : ''}
             </button>
         </aside>
     );
